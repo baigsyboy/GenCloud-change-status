@@ -32,9 +32,9 @@ async function presenceDef(presenceId) {
   console.log(presence);
 
   if (presence.languageLabels.en === undefined) {
-    return document.getElementById("mypresence").innerHTML = "-";
+    document.getElementById("mypresence").innerHTML = "-";
   } else {
-    return document.getElementById("mypresence").innerHTML = spresence.languageLabels.en;
+    document.getElementById("mypresence").innerHTML = presence.languageLabels.en;
   }
   
   document.getElementById("primarypresence").innerHTML = presence.systemPresence;
