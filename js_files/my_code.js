@@ -30,6 +30,7 @@ async function presenceDef(presenceId) {
   let secondaryPresence;
   presence = await presenceAPI.getPresencedefinition(presenceId);
   console.log(presence);
+  console.log(typeof presence.languageLabels.en);
   secondaryPresence = presence.languageLabels.en;
 
   if (typeof secondaryPresence === undefined) {
