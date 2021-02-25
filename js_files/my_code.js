@@ -30,13 +30,11 @@ async function presenceDef(presenceId) {
   let secondaryPresence;
   presence = await presenceAPI.getPresencedefinition(presenceId);
   console.log(presence);
-  console.log(typeof presence.languageLabels.en);
-  secondaryPresence = presence.languageLabels.en;
 
-  if (typeof secondaryPresence === undefined) {
+  if (presence.languageLabels.en === undefined) {
     document.getElementById("mypresence").innerHTML = "-";
   } else {
-    document.getElementById("mypresence").innerHTML = secondaryPresence;
+    document.getElementById("mypresence").innerHTML = spresence.languageLabels.en;
   }
   
   document.getElementById("primarypresence").innerHTML = presence.systemPresence;
