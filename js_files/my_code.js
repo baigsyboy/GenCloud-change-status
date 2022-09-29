@@ -93,8 +93,27 @@ setInterval()
 }
 
 function sendDTMF(){
+  let apiInstance = new platformClient.ConversationsApi();
+
+  let conversationId = document.getElementById('conversationId').value; // String | conversation ID
+  let participantId = document.getElementById('agentPartId').value; // String | participant ID
+  let opts = { 
+    'body': {"digit": "1"} // Object | Digits
+  };
+  
+  apiInstance.postConversationParticipantDigits(conversationId, participantId, opts)
+    .then(() => {
+      console.log('postConversationParticipantDigits returned successfully.');
+    })
+    .catch((err) => {
+      console.log('There was a failure calling postConversationParticipantDigits');
+      console.error(err);
+    });
+
+
   var conversationId = document.getElementById('conversationId').value;
   var agentPartId = document.getElementById('agentPartId').value;
-  console.log(conversationId, agentPartId)
+  console.log(conversationId, agentPartId);
+  client.sendDTMF(conversationId, agentPartId, '1');
 
 }
