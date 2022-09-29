@@ -3,16 +3,29 @@
 <head>
     <title>My Interactions</title>
 
+
 </head>
 
 <body>
+    <script>
+        function sendDTMF(){
+  var conversationId = document.getElementById('conversationId').value;
+  var agentPartId = document.getElementById('agentPartId').value;
+  console.log(conversationId, agentPartId)
+
+}
+        </script>
+    
     <script src="https://sdk-cdn.mypurecloud.com/javascript/latest/purecloud-platform-client-v2.min.js"></script>
-    <script src="./js_files/my_code.js"></script>
+    <!-- <script src="./js_files/my_code.js"></script> -->
     <p>Logged in as: <font id="myname"></font></p>
     <p>Primary presence is: <font id="primarypresence"></font><br>
     Secondary is: <font id="mypresence"></font></p>
     <p><button id="on_break" onclick="ChangePresence('4811f37d-3d51-425f-b46b-bbc5bb545ff5')">Click for Break</button></p>
     <p><button id="change_to_available" onclick="ChangePresence('dba608a0-542c-4a11-9ea1-fef5d2d8ddd7')">Click for Available</button></p>
+    <p>Conversation ID: <input id="conversationId" type="text"></p>
+    <p>Agent Participant ID: <input id="agentPartId" type="text"></p>
+    <p><button id="sendDTMF" onclick="sendDTMF()">Click to send DTMF</button></p>
 </body>
 
 </html>
