@@ -98,7 +98,7 @@ function sendDTMF(){
   let StrConversationId = document.getElementById('conversationId').value; // String | conversation ID
   let StrParticipantId = document.getElementById('agentPartId').value; // String | participant ID
   let opts = { 
-    'body': {"digit": "1"} // Object | Digits
+    'body': {"digits": "1"} // Object | Digits
   };
   
   apiInstance.postConversationParticipantDigits(StrConversationId, StrParticipantId, opts)
