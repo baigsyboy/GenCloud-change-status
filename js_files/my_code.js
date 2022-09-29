@@ -23,7 +23,7 @@ client.loginImplicitGrant("10b85dde-54ad-4bb1-b0b0-e80c29b39e4e", "https://baigs
 
 async function presenceDef(presenceId) {
 
-  // Gets the Presence name from the Presence ID
+  // Gets the Presence name from the Presence ID and update the page
 
   const presenceAPI = new platformClient.PresenceApi();
   let presence;
@@ -87,5 +87,14 @@ async function ChangePresence(newPresenceId) {
     console.error(error);
     return;
   }
+
+setInterval()
+
+}
+
+function sendDTMF(){
+  var conversationId = document.getElementById('conversationId').value;
+  var agentPartId = document.getElementById('agentPartId').value;
+  console.log(conversationId, agentPartId)
 
 }
