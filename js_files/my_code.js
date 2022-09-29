@@ -110,10 +110,4 @@ function sendDTMF(){
       console.error(err);
     });
 
-
-  var conversationId = document.getElementById('conversationId').value;
-  var agentPartId = document.getElementById('agentPartId').value;
-  console.log(conversationId, agentPartId);
-  client.sendDTMF(conversationId, agentPartId, '1');
-
 }
