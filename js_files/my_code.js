@@ -95,13 +95,13 @@ setInterval()
 function sendDTMF(){
   let apiInstance = new platformClient.ConversationsApi();
 
-  let conversationId = document.getElementById('conversationId').value; // String | conversation ID
-  let participantId = document.getElementById('agentPartId').value; // String | participant ID
+  let StrConversationId = document.getElementById('conversationId').value; // String | conversation ID
+  let StrParticipantId = document.getElementById('agentPartId').value; // String | participant ID
   let opts = { 
     'body': {"digit": "1"} // Object | Digits
   };
   
-  apiInstance.postConversationParticipantDigits(conversationId, participantId, opts)
+  apiInstance.postConversationParticipantDigits(StrConversationId, StrParticipantId, opts)
     .then(() => {
       console.log('postConversationParticipantDigits returned successfully.');
     })
